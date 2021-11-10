@@ -4,7 +4,7 @@ void main (){
 }
 class MyApp extends StatelessWidget{
   void answerQuestion(){
-    print(' pressed');
+    print('Outside function call');
   }
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,14 @@ class MyApp extends StatelessWidget{
         ),
         RaisedButton(
           child: Text('Answer 2'), 
-          onPressed: answerQuestion,
+          onPressed: ()=>print('Anonoumous Function single line is called just in this place executed'),
         ),
         RaisedButton(
           child: Text('Answer 3'), 
-          onPressed: answerQuestion,
+          onPressed: (){
+            //...
+            print('Anonymous Function multiline exectuted only here');
+          },
         ),
       ],),
     ),);
