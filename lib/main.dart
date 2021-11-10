@@ -3,8 +3,11 @@ void main (){
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget{
+  var questionIndex = 0;
   void answerQuestion(){
     print('Outside function call');
+    questionIndex++;
+    print(questionIndex);
   }
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget{
         title: Text('My First App'),
       ),
       body: Column(children: [
-        Text('The question!'),
+        Text(questions[questionIndex]),
         RaisedButton(
           child: Text('Answer 1'), 
           onPressed: answerQuestion,
