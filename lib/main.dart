@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
-void main (){
-  runApp(MyApp());
+void main ()=>runApp(MyApp());
+
+class MyApp extends StatefulWidget{
+@override
+State<StatefulWidget>createState(){
+  return MyAppState();
 }
-class MyApp extends StatelessWidget{
+}
+class MyAppState extends State<MyApp>{
   var questionIndex = 0;
   void answerQuestion(){
+    setState(() {
+      questionIndex++;
+    });
     print('Outside function call');
-    questionIndex++;
+    
     print(questionIndex);
   }
   @override
