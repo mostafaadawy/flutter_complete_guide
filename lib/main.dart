@@ -21,6 +21,14 @@ class _MyAppState extends State<MyApp>{
   }
   @override
   Widget build(BuildContext context) {
+    //var dummy=['hi'];
+    //var dummy= const ['hi'];
+    //dummy.add('add'); with constant value
+    //const dummy= const ['hi'];
+    //dummy=['changed'];
+    //print(dummy);
+    // const obj = const value means the pointer and its value const no change or addition to the value is available
+    // while var pointer and const value allow only overwritten to the value no modificatio
     var questions = [
       {
         'questionText':'what\'s your favorite color?', 
