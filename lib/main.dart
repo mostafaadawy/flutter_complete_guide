@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Question.dart';
+import 'answer.dart';
 void main ()=>runApp(MyApp());
 
 class MyApp extends StatefulWidget{
@@ -31,21 +32,9 @@ class _MyAppState extends State<MyApp>{
       ),
       body: Column(children: [
         Question(questions[_questionIndex]),
-        RaisedButton(
-          child: Text('Answer 1'), 
-          onPressed: _answerQuestion,
-        ),
-        RaisedButton(
-          child: Text('Answer 2'), 
-          onPressed: ()=>print('Anonoumous Function single line is called just in this place executed'),
-        ),
-        RaisedButton(
-          child: Text('Answer 3'), 
-          onPressed: (){
-            //...
-            print('Anonymous Function multiline exectuted only here');
-          },
-        ),
+        Answer(_answerQuestion),
+        Answer(_answerQuestion),
+        Answer(_answerQuestion),
       ],),
     ),);
  
