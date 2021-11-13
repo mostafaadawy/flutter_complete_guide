@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 class Result extends StatelessWidget {
   final int resultScore;
-  Result(this.resultScore);
+  final Function restHandler;
+  Result(this.resultScore, this.restHandler);
   String get resultPhrase{
     var rsultText ='You did it';
     if(resultScore<=8){
@@ -19,11 +20,22 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
       Center(
-        child: Text(
+        child :Column(children:[
+          Text(
           resultPhrase,
            style: TextStyle(fontSize: 36,fontWeight: FontWeight.bold),
+           textAlign: TextAlign.center,
+           ),
+           FlatButton(
+              child: Text(
+               'Restart Quiz',
+               ),
+               textColor: Colors.blue,
+              onPressed: restHandler,
            )
-           );
+        ]),
+        
+      );
     
   }
 }
